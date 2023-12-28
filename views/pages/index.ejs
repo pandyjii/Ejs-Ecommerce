@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+<body>
+    <!-- Navigation-->
+    <%- include('../partials/navbar'); %>
+
+    <!-- Hero Section -->
+    <%- include('../partials/hero', {name:developer}); %>
+
+    <!-- Products -->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+          <div
+            class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+          >
+          <% 
+            console.log(products);
+            console.log("products");
+            console.log(developer);
+              
+            products.forEach(function (product){ 
+          %> 
+
+            <%- include('../partials/productCard', {Products: product}); %>
+          <% }); %>
+          </div>
+        </div>
+    </section>
+    <footer class="py-5 bg-dark">
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>
